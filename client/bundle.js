@@ -1,9 +1,11 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var MainController = require('./main-controller.js');
+var MainController = require('./main-controller.js'),
+    mainDirective = require('./main-directive.js');
 
 require('angular').module('workspace')
-    .controller('MainController', [MainController]);
-},{"./main-controller.js":2,"angular":5}],2:[function(require,module,exports){
+    .controller('MainController', [MainController])
+    .directive('mainDirective', [mainDirective]);
+},{"./main-controller.js":2,"./main-directive.js":3,"angular":6}],2:[function(require,module,exports){
 function MainController() {
     var mc = this;
     mc.title = 'My AngularJS Workspace';
@@ -15,12 +17,23 @@ function MainController() {
 
 module.exports = MainController;
 },{}],3:[function(require,module,exports){
+function mainDirective() {
+    return {
+        replace: false,
+        template: [
+            '<div>This is a text from directive</div>'
+        ].join('')
+    };
+}
+
+module.exports = mainDirective;
+},{}],4:[function(require,module,exports){
 'use strict'; /* jshint ignore: line */
 require('angular').module('workspace', []);
 
 // Add components
 require('../components/main-page');
-},{"../components/main-page":1,"angular":5}],4:[function(require,module,exports){
+},{"../components/main-page":1,"angular":6}],5:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.6
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -31044,8 +31057,8 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":4}]},{},[3]);
+},{"./angular":5}]},{},[4]);

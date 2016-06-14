@@ -1,4 +1,6 @@
-var MainController = require('./main-controller.js');
+var MainController = require('./main-controller.js'),
+    mainDirective = require('./main-directive.js');
 
 require('angular').module('workspace')
-    .controller('MainController', [MainController]);
+    .controller('MainController', [MainController])
+    .directive('mainDirective', [mainDirective]);

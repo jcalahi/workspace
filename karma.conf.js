@@ -19,6 +19,7 @@ module.exports = function(config) {
       'node_modules/angular-mocks/angular-mocks.js',
 
       'client/src/components/main-page/main-controller.js',
+      'client/src/components/main-page/main-directive.js',
       'tests/*-spec.js'
     ],
 
@@ -32,6 +33,7 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'client/src/components/main-page/main-controller.js': ['coverage'],
+      'client/src/components/main-page/main-directive.js': ['coverage'],
       'tests/*-spec.js': ['browserify']
     },
 
