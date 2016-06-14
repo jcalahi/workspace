@@ -5,9 +5,9 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="assets/css/styles.css">
     </head>
-    <body>
-        {{ 1 + 1 }}
+    <body ng-controller="MainController as mc">
         <p class="blue">Hello World</p>
+        {{ mc.title }}
         <script src="bundle.js"></script>
     </body>
 </html>

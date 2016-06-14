@@ -1,3 +1,5 @@
-var angular = require('angular');
+'use strict'; /* jshint ignore: line */
+require('angular').module('workspace', []);
 
-angular.module('workspace', []);
+// Add components
+require('../components/main-page');

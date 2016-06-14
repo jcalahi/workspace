@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'browserify'],
 
 
     // list of files / patterns to load in the browser
@@ -18,6 +18,7 @@ module.exports = function(config) {
       'client/bundle.js',
       'node_modules/angular-mocks/angular-mocks.js',
 
+      'client/src/components/main-page/main-controller.js',
       'tests/*-spec.js'
     ],
 
@@ -30,13 +31,15 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'client/src/components/main-page/main-controller.js': ['coverage'],
+      'tests/*-spec.js': ['browserify']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'coverage', 'html'],
+    reporters: ['progress', 'coverage'],
 
 
     coverageReporter: {
@@ -44,9 +47,6 @@ module.exports = function(config) {
     },
 
 
-    htmlReporter: {
-      outputFile: 'reports/build-test-report.html'
-    },
     // web server port
     port: 9876,
 
