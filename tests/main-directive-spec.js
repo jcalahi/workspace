@@ -16,14 +16,12 @@ describe('MainDirective', function() {
 
     it('should be defined', inject(function($injector) {
         //expect($injector.get('mainDirectiveDirective')).toBeDefined();
-        console.log(dir);
         expect(dir).toBeDefined();
     }));
 
     it('should replace div', function() {
         var element = angular.element(dir.template);
         compile(element)(scope);
-        console.log(element);
         scope.$digest();
         //expect(element.find('main-directive').length).toEqual(1);
     });

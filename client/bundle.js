@@ -1,17 +1,25 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var MainController = require('./main-controller.js'),
-    mainDirective = require('./main-directive.js');
+var MainController = require('./main-controller.js');
+var mainDirective = require('./main-directive.js');
 
 require('angular').module('workspace')
     .controller('MainController', [MainController])
     .directive('mainDirective', [mainDirective]);
 },{"./main-controller.js":2,"./main-directive.js":3,"angular":6}],2:[function(require,module,exports){
-function MainController() {
+function MainController($timeout) {
     var mc = this;
+
     mc.title = 'My AngularJS Workspace';
+    mc.number = 0;
 
     mc.setTitle = function(title) {
         mc.title = title;
+    };
+
+    mc.button = function() {
+        $timeout(function() {
+            mc.number = 1;
+        }, 1000);
     };
 }
 
