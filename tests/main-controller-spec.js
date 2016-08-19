@@ -31,5 +31,4 @@ describe('MainController', function() {
             expect(controller.number).toEqual(1);
         });
     });
-
 });
