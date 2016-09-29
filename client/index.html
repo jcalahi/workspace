@@ -5,11 +5,10 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="assets/css/styles.css">
     </head>
-    <body ng-controller="MainController as mc">
-        <p class="blue">Hello World</p>
-
-        <main-directive></main-directive>
-        <counter></counter>
-        <script src="bundle.js"></script>
+    <body ng-controller="AppController as appCtrl">
+        <button type="button" ng-click="appCtrl.show()">Show</button>
+        <script src="/angular/angular.js"></script>
+        <script src="/src/modules/app.js"></script>
+        <script src="/src/controllers/appController.js"></script>
     </body>
 </html>
