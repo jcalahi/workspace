@@ -1,7 +1,8 @@
 (function() {
     'use strict';
     angular.module("workspace").controller("AppController", [
-        function() {
+        'appFactory',
+        function(appFactory) {
             var vm = this;
             vm.name = null;
             vm.setName = function(name) {
@@ -14,6 +15,8 @@
             vm.show = function() {
                 console.log("Hello World");
             };
+            
+            vm.message = appFactory.getName();
         }
     ]);
 })();
