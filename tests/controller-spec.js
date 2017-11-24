@@ -16,6 +16,10 @@ describe('App Controller', function() {
         expect(controller.name).toEqual('julius');
     });
 
+    it('should get name', function() {
+        expect(controller.getName()).toBe(null);
+    });
+
     it('should do console.log', function() {
         spyOn(console, 'log');
         controller.show();
