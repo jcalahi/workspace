@@ -19,9 +19,9 @@
                 },
                 template: 
                     '<div>' +
-                        '<h2>{{ title }}</h2>' + 
-                        '<ul ng-repeat="food in list">' + 
-                            '<li ng-click="addToCart()">{{ food }}</li>' + 
+                        '<h2 ng-bind="::title"></h2>' + 
+                        '<ul ng-repeat="food in ::list">' + 
+                            '<li ng-click="addToCart()" ng-bind="::food"></li>' + 
                         '</ul>' + 
                     '</div>'
             };
