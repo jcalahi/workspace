@@ -1,16 +1,18 @@
 describe("App Directive", function() {
     var scope, template;
 
-    beforeEach(module("workspace"));
+    beforeEach(function() {
+        module("workspace");
 
-    beforeEach(inject(function($rootScope, $compile) {
-        scope = $rootScope.$new();
-        scope.list = ['apple', 'orange', 'ensaymada'];
-        scope.title = 'My Favorite Food';
-        template = angular.element("<app-directive title='title' list='list'></app-directive>");
-        $compile(template)(scope);
-        scope.$digest();
-    }));
+        inject(function($rootScope, $compile) {
+            scope = $rootScope.$new();
+            scope.list = ['apple', 'orange', 'ensaymada'];
+            scope.title = 'My Favorite Food';
+            template = angular.element("<app-directive title='title' list='list'></app-directive>");
+            $compile(template)(scope);
+            scope.$digest();
+        })
+    });
 
     it("should be defined", inject(function($injector) {
         expect($injector.get("appDirectiveDirective")).toBeDefined();

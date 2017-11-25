@@ -12,7 +12,7 @@ gulp.task('watch-files', function() {
 
 gulp.task('init', function() {
     browserSync({
-        server: ['client', 'bower_components']
+        server: ['client', 'node_modules']
     });
 });
 

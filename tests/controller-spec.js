@@ -7,7 +7,10 @@ describe('App Controller', function() {
         inject(function($rootScope, $controller, appFactory) {
             scope = $rootScope.$new();
             factory = appFactory;
-            controller = $controller('AppController');
+            controller = $controller('AppController', {
+                $scope: scope,
+                appFactory: factory
+            });
         });
     });
 
