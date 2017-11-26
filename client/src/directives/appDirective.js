@@ -15,7 +15,6 @@
                     scope.addToCart = function() {
                         scope.items++;
                     };
-
                 },
                 template: 
                     '<div>' +

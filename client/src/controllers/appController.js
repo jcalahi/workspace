@@ -1,8 +1,9 @@
 (function() {
     'use strict';
     angular.module("workspace").controller("AppController", [
+        '$state',
         'appFactory',
-        function(appFactory) {
+        function($state, appFactory) {
             var vm = this;
             vm.name = null;
             vm.setName = function(name) {
@@ -17,6 +18,10 @@
             };
             
             vm.message = appFactory.getName();
+
+            vm.goto = function() {
+                $state.go('page1');
+            };
         }
     ]);
 })();
